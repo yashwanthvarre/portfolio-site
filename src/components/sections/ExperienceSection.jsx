@@ -16,7 +16,7 @@ export const ExperienceSection = ({ experience }) => {
             key={`${job.company}-${job.period}`}
             style={{ '--delay': `${index * 120}ms` }}
           >
-            {/* hello. */}
+            {/* hello. */} 
             <div className="journey-rail" aria-hidden="true" />
             <div className="journey-head">
               <div className="timeline-meta">
