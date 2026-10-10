@@ -20,7 +20,7 @@ export const HeroSection = ({ heroProfile }) => {
         <div className="hero-actions hero-actions--center">
           <ContactPill label="Get In Touch" value="yashwanthh235@gmail.com" />
           <ContactPill label="Phone" value="201-360-1325" />
-          <ContactPill label="LinkedIn" value="linkedin.com/in/yashwanth-varre-b76254130" />
+          <ContactPill label="LinkedIn" value="www.linkedin.com/in/yashwanth-va/" />
         </div>
 
         <div className="hero-note-strip">
