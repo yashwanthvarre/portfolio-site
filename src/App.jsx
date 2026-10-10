@@ -18,6 +18,7 @@ import {
   highlights,
   impactMetrics,
   skillGroups,
+  summary,
 } from './data/resumeData'
 import { useRevealOnScroll } from './hooks/useRevealOnScroll'
 
@@ -55,9 +56,6 @@ const App = () => {
 
   return (
     <main className="page-shell min-h-screen antialiased">
-      <div className="page-shell__canvas" aria-hidden="true" />
-      <div className="page-shell__plant" aria-hidden="true" />
-
       <header className="topbar px-6 md:px-8">
         <span className="brand">Yashwanth Varre</span>
         <nav className="topnav items-center" aria-label="Section navigation">
@@ -98,7 +96,7 @@ const App = () => {
       </aside>
 
       <HeroSection heroProfile={heroProfile} />
-      <SummarySection highlights={highlights} />
+      <SummarySection highlights={highlights} summary={summary} />
       <GitHubSection githubProfile={githubProfile} githubProjects={githubProjects} />
       <ExperienceSection experience={experience} />
       <MetricsSection impactMetrics={impactMetrics} />

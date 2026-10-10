@@ -1,43 +1,43 @@
 export const summary =
-  'Software Engineer with 5+ years of experience building scalable, high-performance web applications and owning critical system components end-to-end using React, TypeScript, and modern full-stack architectures. Demonstrates deep expertise in frontend engineering and UI architecture, with a strong focus on creating intuitive, high-impact user experiences that unlock meaningful customer value.'
+  'Senior Software Engineer with 4+ years architecting high-availability banking and payments platforms for 750K+ users, using React, Next.js, TypeScript, and Node.js/PostgreSQL, with additional experience building business management platforms for hospitality and ecommerce clients. Proven track record of technical leadership — mentoring engineers, driving cross-team adoption of shared tooling, and owning features end-to-end — alongside measurable delivery impact (reduced duplicate transfers by 25%, zero-vulnerability production releases). Thrives in fast-paced, agile environments balancing hands-on engineering with team-level influence.'
 
 export const heroProfile = {
   location: 'New York City, New York',
   firstName: 'Yashwanth',
   lastName: 'Varre',
   headline:
-    'Senior Software Engineer | Frontend-Focused | Building scalable product experiences for high-traffic enterprise platforms',
-  tech: ['React', 'TypeScript', 'Next.js', 'AWS', 'GraphQL'],
+    'Senior Software Engineer | React, Next.js & Node.js | Building high-availability banking and payments platforms',
+  tech: ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS'],
   notes: [
-    '5+ years building modern web applications',
-    '750K+ users supported across digital workflows',
-    'Performance, accessibility, and product ownership',
+    '4+ years building banking, payments, and business platforms',
+    '750K+ users supported on high-stakes transaction workflows',
+    'Technical leadership, mentoring, and end-to-end ownership',
   ],
 }
 
 export const highlights = [
-  { value: '5+', label: 'Years building production software' },
-  { value: '750K+', label: 'Users supported across SaaS workflows' },
-  { value: 'React', label: 'Core frontend platform expertise' },
-  { value: 'AWS', label: 'Cloud deployment and delivery experience' },
+  { value: '4+', label: 'Years building production software' },
+  { value: '750K+', label: 'Users on banking and payments platforms' },
+  { value: '25%', label: 'Fewer duplicate transfers after API v2 migration' },
+  { value: '32%', label: 'Faster page loads through SSR/ISR and code-splitting' },
 ]
 
 export const impactMetrics = [
   {
-    value: '750K+',
-    label: 'Users supported across enterprise workflows',
+    value: '20%',
+    label: 'Team velocity gain while mentoring 3 junior engineers',
   },
   {
-    value: '5+',
-    label: 'Years building and shipping production-grade applications',
+    value: '55→85%',
+    label: 'Test coverage raised with TDD and code reviews',
   },
   {
-    value: 'Next.js',
-    label: 'Architecture modernization delivered in production',
+    value: '30%',
+    label: 'Faster data fetching with Apollo batching and caching',
   },
   {
-    value: 'React Query',
-    label: 'High-traffic state and data workflows improved',
+    value: '0',
+    label: 'Outstanding vulnerabilities across production artifacts',
   },
 ]
 
@@ -46,79 +46,78 @@ export const experience = [
     company: 'US Bank',
     role: 'Senior Software Developer',
     period: 'October 2025 - Present',
+    tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redux', 'AWS', 'Jenkins', 'Kibana'],
     points: [
-      'Led migration to a modern Next.js architecture, owning full-stack feature delivery and integrating with scalable backend services to support complex, data-driven SaaS workflows for 750K+ users.',
-      'Partnered with backend engineers to design and evolve REST and GraphQL API contracts for multi-tenant SaaS platforms, enabling scalable, secure, and efficient data flows across customer-facing applications.',
-      'Diagnosed and resolved performance bottlenecks across frontend and backend layers, optimizing API performance, data processing efficiency, and system throughput in distributed environments.',
-      'Resolved timezone inconsistencies using dayjs, ensuring accurate execution of scheduled transfers and reducing defects.',
-      'Leveraged Datadog and Quantum Metric to analyze user behavior and frontend performance, identifying bottlenecks and optimizing rendering, data fetching, and interaction latency.',
-      'Led production releases using Git-based workflows and CI/CD pipelines while monitoring reliability and resolving production issues to maintain availability and performance.',
-      'Implemented advanced client and server state management using React Query, enabling complex UI interactions and workflow-heavy experiences across high-traffic applications.',
+      'Migrated the duplicate transfer detection module from API v1 to v2 within the legacy Node.js/PostgreSQL codebase, rolling out the change behind feature flags to control exposure — reducing duplicate transfers by 25% for a platform supporting 750K+ users.',
+      'Architected payment and transaction execution workflows using React state management (Redux, ContextAPI), implementing global state and centralized error handling to keep review, edit, and confirmation steps consistent and resilient across high-stakes financial transactions.',
+      'Built a Node.js-based feature flag service backed by PostgreSQL, exposing REST endpoints for real-time flag evaluation and enabling safe, incremental rollout of high-risk backend changes without redeployments.',
+      'Instrumented Node.js middleware to log and audit feature-flag evaluations per request, giving engineering and fraud teams visibility into which users hit which flag variants during sensitive transaction flows.',
+      'Delivered production features across two codebases with end-to-end ownership, mentoring 3 junior engineers on best practices and collaborating with product and design in sprint planning — improving team velocity by 20% (tracked via Jira sprint metrics).',
+      'Designed and shipped a customer-facing REST API (Third-Party Account Acknowledgement) using Node.js and PostgreSQL transactions to identify existing bank customers from third-party account data, enabling personalized features and targeted offers.',
+      'Built a real-time fraud-awareness banner (Scam Banner) in React and TypeScript to surface risk alerts to customers during sensitive transactions, with underlying risk signals indexed and visualized in Kibana dashboards for engineering and fraud-monitoring teams.',
+      'Implemented server-side PDF generation using Puppeteer to render transaction receipts from HTML templates, storing them in S3 with server-side encryption at rest — enabling users to securely download their transaction history.',
+      'Owned production deployment verification for AWS (EC2/ECS)-hosted services via Jenkins CI/CD pipelines, clearing Akamai CDN cache and validating deployment versions to ensure new releases took effect reliably — maintaining platform uptime and SLA compliance.',
+      'Conducted bi-weekly dependency audits via Black Duck scanning, upgrading npm packages to patched/stable versions and adapting affected code to maintain compatibility — sustaining zero outstanding vulnerabilities across production artifacts.',
     ],
   },
   {
     company: 'IT Resources INC',
     role: 'Software Developer',
     period: 'March 2024 - October 2025',
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Jest', 'Playwright', 'Docker', 'Kubernetes'],
     points: [
-      'Built and optimized full-stack Next.js applications leveraging SSR, SSG, and ISR for improved SEO, faster load times, and enhanced user experience across dynamic and static pages in production environments.',
-      'Designed and integrated GraphQL APIs within distributed systems, optimizing data models, improving data consistency, and enabling efficient data exchange across backend services.',
+      'Built a business management application for restaurant, hotel, and ecommerce owners using React, Next.js, TypeScript, and TailwindCSS, developing Chart.js-powered dashboards for profit/loss and sales analytics, REST API-integrated inventory and item management, and S3-based storage for images and documents.',
+      'Improved frontend performance using SSR/ISR, code-splitting, and lazy loading — reducing page load time by 32% and build times by 40%; leveraged Quantum Metric to diagnose production issues and Adobe Analytics to track user interaction patterns, informing performance and UX improvements.',
+      'Practiced test-driven development (TDD) using Jest and Playwright (unit and end-to-end) and led code reviews for a team of 7 developers, increasing test coverage from 55% to 85% and reducing post-release defects by 30%.',
+      'Deployed and maintained containerized services using Docker and Kubernetes, supporting consistent environments across development and production.',
     ],
   },
   {
     company: 'US Bank',
     role: 'Software Developer',
     period: 'March 2022 - February 2024',
+    tags: ['React', 'Next.js', 'TypeScript', 'ChakraUI', 'GraphQL', 'Apollo Client', 'SonarQube', 'GitHub Actions'],
     points: [
-      'Built scalable, reusable component libraries and enforced frontend best practices, improving consistency, maintainability, and performance across large-scale applications.',
-      'Defined and implemented test-driven development practices using Jest, ensuring strong coverage, early defect detection, and prevention of regressions in critical frontend and API workflows.',
-      'Implemented secure frontend validation using controlled React inputs, input sanitization, and schema-based validation, while supporting WCAG 2.1 AA and ADA compliance.',
+      "Built a customer-facing invoice payment flow — landing page, dynamic amount calculations (tipping, taxes, fees, discounts), and payment form — using React, Next.js, and TypeScript, integrating with US Bank's Elavon gateway to process payments and reflect real-time balance updates.",
+      'Contributed to a reusable ChakraUI-based design system, building and extending accessible, composable components used across checkout, QR code, gift card, and invoice flows for 450K+ users.',
+      'Integrated GraphQL and REST APIs via Apollo Client, using request batching and caching to reduce redundant calls — improving data-fetch performance by up to 30% (measured via DataDog).',
+      'Integrated SonarQube into GitHub Actions CI/CD pipelines as a quality gate, enforcing code quality, security, and coverage thresholds to block merges on failed checks.',
+      'Implemented WCAG 2.1 AA accessibility improvements — keyboard navigation, ARIA, and screen reader support — across payment and account flows for 450K+ users.',
     ],
   },
 ]
 
 export const skillGroups = [
   {
-    title: 'Frontend Development',
-    description: 'Creating responsive, maintainable, and high-performance user interfaces.',
+    title: 'Frontend Engineering',
+    description: 'Building responsive, accessible, and high-performance user interfaces.',
     items: [
       'React',
       'TypeScript',
       'Next.js',
       'JavaScript (ES6+)',
       'CSS3',
+      'Redux',
       'Context API',
       'Tailwind CSS',
       'SASS',
+      'GraphQL',
     ],
   },
   {
-    title: 'Backend & APIs',
-    description: 'Designing robust service integrations and scalable application data flows.',
-    items: ['REST APIs', 'GraphQL', 'Schema design', 'Data modeling'],
+    title: 'Backend & Databases',
+    description: 'Designing services, REST APIs, and transactional data flows.',
+    items: ['Node.js', 'REST APIs', 'PostgreSQL', 'MySQL'],
   },
   {
-    title: 'Cloud & Infrastructure',
-    description: 'Deploying, monitoring, and scaling applications across modern cloud platforms.',
-    items: [
-      'Azure CI/CD Pipelines',
-      'AWS (EC2, S3)',
-      'Docker',
-      'Kubernetes',
-      'GitHub Actions',
-    ],
+    title: 'Cloud & DevOps',
+    description: 'Deploying, verifying, and scaling applications in the cloud.',
+    items: ['AWS (EC2, S3, ECS)', 'Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions'],
   },
   {
-    title: 'Analytics & Quality',
-    description: 'Improving product visibility, reliability, and user-centered decision making.',
-    items: [
-      'PostgreSQL',
-      'MySQL',
-      'Kibana',
-      'Tealium',
-      'Adobe Analytics',
-      'Quantum Metric',
-    ],
+    title: 'Observability & Analytics',
+    description: 'Monitoring production health and understanding user behavior.',
+    items: ['Kibana', 'Adobe Analytics', 'Quantum Metric'],
   },
 ]
 
@@ -140,8 +139,8 @@ export const contactDetails = [
   {
     title: 'LinkedIn',
     description: 'Professional networking and updates',
-    value: 'linkedin.com/in/yashwanth-varre-b76254130',
-    href: 'https://linkedin.com/in/yashwanth-varre-b76254130',
+    value: 'www.linkedin.com/in/yashwanth-va/',
+    href: 'https://www.linkedin.com/in/yashwanth-va/',
   },
 ]
 

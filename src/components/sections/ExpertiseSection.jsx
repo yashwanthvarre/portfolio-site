@@ -38,7 +38,7 @@ export const ExpertiseSection = ({ aiTools, skillGroups }) => {
         <div className="ai-panel content-card">
           <div className="ai-panel__header">
             <div className="ai-panel__badge" aria-hidden="true">
-              ⚡
+              ✦
             </div>
             <div>
               <h3>AI-Enhanced Development</h3>

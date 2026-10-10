@@ -16,7 +16,6 @@ export const ExperienceSection = ({ experience }) => {
             key={`${job.company}-${job.period}`}
             style={{ '--delay': `${index * 120}ms` }}
           >
-            {/* hello. */} 
             <div className="journey-rail" aria-hidden="true" />
             <div className="journey-head">
               <div className="timeline-meta">
@@ -28,8 +27,8 @@ export const ExperienceSection = ({ experience }) => {
             </div>
             <div className="timeline-body">
               <div className="journey-tags">
-                {job.points.slice(0, 3).map((point) => (
-                  <span key={point}>{point.split(',')[0]}</span>
+                {job.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
                 ))}
               </div>
               <ul>

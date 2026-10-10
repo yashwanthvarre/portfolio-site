@@ -1,13 +1,10 @@
-export const SummarySection = ({ highlights }) => {
+export const SummarySection = ({ highlights, summary }) => {
   return (
     <section className="chapter summary-band reveal" id="summary">
       <div className="section-intro summary-intro">
         <p className="kicker">Snapshot</p>
-        <h2>Frontend depth, product ownership, and execution at scale.</h2>
-        <p>
-          Strong in turning ambiguous requirements into fast, reliable, and
-          customer-facing software across modern enterprise stacks.
-        </p>
+        <h2>Banking and payments platforms, built to scale.</h2>
+        <p>{summary}</p>
       </div>
 
       <div className="stat-grid">
