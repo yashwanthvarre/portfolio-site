@@ -45,7 +45,7 @@ npm run lint
 - updated GitHub profile metadata to reflect the current public repo count
 - replaced weaker featured repos with the most resume-relevant current projects
 - added per-project highlight chips and outcome summaries in the GitHub section
-- made contact values clickable so email, phone, and LinkedIn work directly from the page
+- made contact values clickable so email and LinkedIn work directly from the page
 - improved README coverage so the repo explains purpose, structure, and verification
 
 ## Results achieved

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import { ContactSection } from './components/sections/ContactSection'
 import { EducationSection } from './components/sections/EducationSection'
@@ -22,31 +22,39 @@ import {
 } from './data/resumeData'
 import { useRevealOnScroll } from './hooks/useRevealOnScroll'
 
-const navigableSections = ['hero', 'github', 'experience', 'expertise', 'education']
+const navLinks = [
+  { id: 'experience', label: 'Experience' },
+  { id: 'github', label: 'Work' },
+  { id: 'expertise', label: 'Expertise' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
+]
+
+const observedSections = ['hero', 'summary', ...navLinks.map((link) => link.id)]
+
+const linkedInUrl = contactDetails.find((item) => item.title === 'LinkedIn').href
 
 const App = () => {
   useRevealOnScroll()
   const [activeSection, setActiveSection] = useState('hero')
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuButtonRef = useRef(null)
 
   useEffect(() => {
-    const sectionElements = navigableSections
+    const sectionElements = observedSections
       .map((id) => document.getElementById(id))
       .filter(Boolean)
 
+    // A thin band mid-viewport, so sections taller than the screen still register.
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio)
+        const visibleEntry = entries.find((entry) => entry.isIntersecting)
 
-        if (visibleEntries.length > 0) {
-          setActiveSection(visibleEntries[0].target.id)
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id)
         }
       },
-      {
-        threshold: [0.2, 0.35, 0.5, 0.7],
-        rootMargin: '-18% 0px -45% 0px',
-      },
+      { rootMargin: '-40% 0px -55% 0px' },
     )
 
     sectionElements.forEach((section) => observer.observe(section))
@@ -54,58 +62,101 @@ const App = () => {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) {
+      return undefined
+    }
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', closeOnEscape)
+
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [menuOpen])
+
   return (
-    <main className="page-shell min-h-screen antialiased">
-      <header className="topbar px-6 md:px-8">
-        <span className="brand">Yashwanth Varre</span>
-        <nav className="topnav items-center" aria-label="Section navigation">
-          <a href="#hero">Home</a>
-          <a href="#github">GitHub</a>
-          <a href="#experience">Experience</a>
-          <a href="#expertise">Expertise</a>
-          <a href="#education">Education</a>
-        </nav>
+    <div className="page-shell">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+
+      <header className="topbar">
+        <div className="topbar__inner">
+          <a className="brand" href="#hero" aria-label="Yashwanth Varre, back to top">
+            <span className="brand__monogram" aria-hidden="true">
+              YV
+            </span>
+            <span>Yashwanth Varre</span>
+          </a>
+          <button
+            className="menu-toggle"
+            type="button"
+            ref={menuButtonRef}
+            aria-expanded={menuOpen}
+            aria-controls="site-nav"
+            onClick={() => setMenuOpen((isOpen) => !isOpen)}
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
+          <nav
+            className={`topnav${menuOpen ? ' topnav--open' : ''}`}
+            id="site-nav"
+            aria-label="Section navigation"
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                aria-current={activeSection === link.id ? 'true' : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </header>
 
-      <aside className="content-dots" aria-label="Section navigation">
-        <a
-          href="#hero"
-          aria-label="Go to hero"
-          aria-current={activeSection === 'hero' ? 'true' : undefined}
-        />
-        <a
-          href="#github"
-          aria-label="Go to github"
-          aria-current={activeSection === 'github' ? 'true' : undefined}
-        />
-        <a
-          href="#experience"
-          aria-label="Go to experience"
-          aria-current={activeSection === 'experience' ? 'true' : undefined}
-        />
-        <a
-          href="#expertise"
-          aria-label="Go to expertise"
-          aria-current={activeSection === 'expertise' ? 'true' : undefined}
-        />
-        <a
-          href="#education"
-          aria-label="Go to education"
-          aria-current={activeSection === 'education' ? 'true' : undefined}
-        />
-      </aside>
+      <main id="main">
+        <HeroSection heroProfile={heroProfile} />
 
-      <HeroSection heroProfile={heroProfile} />
-      <SummarySection highlights={highlights} summary={summary} />
-      <GitHubSection githubProfile={githubProfile} githubProjects={githubProjects} />
-      <ExperienceSection experience={experience} />
-      <MetricsSection impactMetrics={impactMetrics} />
-      <div id="expertise">
+        <div className="chapter-bar">
+          <p>What you&apos;ll find here</p>
+          <ol className="chapter-bar__list">
+            {navLinks.map((link, index) => (
+              <li key={link.id}>
+                <i>{`0${index + 1}`}</i> {link.label}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <SummarySection highlights={highlights} summary={summary} />
+        <ExperienceSection experience={experience} />
+        <MetricsSection impactMetrics={impactMetrics} />
+        <GitHubSection githubProfile={githubProfile} githubProjects={githubProjects} />
         <ExpertiseSection aiTools={aiTools} skillGroups={skillGroups} />
-      </div>
-      <EducationSection />
-      <ContactSection contactDetails={contactDetails} />
-    </main>
+        <EducationSection />
+        <ContactSection contactDetails={contactDetails} />
+      </main>
+
+      <footer className="footer">
+        <span className="footer__brand">Yashwanth Varre.</span>
+        <div className="footer__links">
+          <a href={githubProfile.url} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href={linkedInUrl} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </footer>
+    </div>
   )
 }
 
