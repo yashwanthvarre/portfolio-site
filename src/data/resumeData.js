@@ -1,12 +1,11 @@
 export const summary =
-  'Senior Software Engineer with 4+ years architecting high-availability banking and payments platforms for 750K+ users, using React, Next.js, TypeScript, and Node.js/PostgreSQL, with additional experience building business management platforms for hospitality and ecommerce clients. Proven track record of technical leadership — mentoring engineers, driving cross-team adoption of shared tooling, and owning features end-to-end — alongside measurable delivery impact (reduced duplicate transfers by 25%, zero-vulnerability production releases). Thrives in fast-paced, agile environments balancing hands-on engineering with team-level influence.'
+  'I have spent 4+ years building high-availability banking and payments platforms for 750K+ users with React, Next.js, TypeScript, and Node.js/PostgreSQL. I own features end to end, mentor engineers, and help teams adopt shared tooling. I have also built business management platforms for hospitality and ecommerce clients.'
 
 export const heroProfile = {
   location: 'New York City, New York',
   firstName: 'Yashwanth',
   lastName: 'Varre',
-  headline:
-    'Senior Software Engineer | React, Next.js & Node.js | Building high-availability banking and payments platforms',
+  headline: 'Senior Software Engineer building banking and payments software used by 750K+ people.',
   tech: ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS'],
   notes: [
     '4+ years building banking, payments, and business platforms',
@@ -131,12 +130,6 @@ export const contactDetails = [
     href: 'mailto:yashwanthh235@gmail.com',
   },
   {
-    title: 'Phone',
-    description: 'Available for quick calls',
-    value: '201-360-1325',
-    href: 'tel:2013601325',
-  },
-  {
     title: 'LinkedIn',
     description: 'Professional networking and updates',
     value: 'www.linkedin.com/in/yashwanth-va/',
@@ -147,7 +140,6 @@ export const contactDetails = [
 export const githubProfile = {
   handle: 'yashwanthvarre',
   url: 'https://github.com/yashwanthvarre',
-  repoCount: 23,
   blurb:
     'A frontend-heavy portfolio anchored by React, Next.js, TypeScript, and product-oriented experiments, with supporting work in Java APIs and applied language tooling.',
 }
@@ -159,7 +151,7 @@ export const githubProjects = [
     updated: 'Apr 2026',
     url: 'https://github.com/yashwanthvarre/CineArchive',
     summary:
-      'A Next.js movie discovery app focused on structured browsing, richer catalog metadata, and recruiter-friendly frontend architecture.',
+      'A Next.js movie discovery app with structured browsing, filtering, and richer catalog metadata for each title.',
     highlights: ['Next.js', 'TypeScript', 'Filtering UX'],
     outcome: 'Production build verified after route-structure cleanup and component refactor.',
   },
@@ -169,8 +161,8 @@ export const githubProjects = [
     updated: 'Apr 2026',
     url: 'https://github.com/yashwanthvarre/Portfolio',
     summary:
-      'A Vite-based personal portfolio designed around recruiter scanning, GitHub project curation, and concise evidence of frontend impact.',
-    highlights: ['React 19', 'Vite', 'Portfolio UX'],
+      'A responsive single-page portfolio that brings experience, projects, and contact details together in one place.',
+    highlights: ['React 19', 'Vite', 'Responsive design'],
     outcome: 'Responsive single-page presentation with live GitHub project framing and recruiter-facing content sections.',
   },
   {
@@ -192,8 +184,8 @@ export const githubProjects = [
     updated: 'Jun 2025',
     url: 'https://github.com/yashwanthvarre/Take-Home-Assessment',
     summary:
-      'A compact TypeScript implementation that signals recent hands-on coding work and a stronger modern-stack baseline than older CRUD demos.',
-    highlights: ['TypeScript', 'Recent code', 'Interview-ready'],
+      'A tabbed page interface with an add-page dialog and drag-and-drop tabs, built with Next.js, TypeScript, and Chakra UI.',
+    highlights: ['Next.js', 'TypeScript', 'Chakra UI'],
     outcome: 'Useful as supporting evidence for recent TypeScript work, though less portfolio-critical than the top three projects.',
   },
   {

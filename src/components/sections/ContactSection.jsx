@@ -2,7 +2,10 @@ export const ContactSection = ({ contactDetails }) => {
   return (
     <section className="chapter reveal" id="contact">
       <div className="section-heading">
-        <h2>Let's Connect</h2>
+        <div>
+          <span className="section-number">05 / Contact</span>
+          <h2>Let's Connect</h2>
+        </div>
         <p>
           Ready to discuss opportunities, collaborate on projects, or just have
           a tech conversation? I&apos;m always open to connecting with teams and
@@ -11,51 +14,32 @@ export const ContactSection = ({ contactDetails }) => {
       </div>
 
       <div className="contact-grid">
-        <div className="contact-grid__list">
-          {contactDetails.map((item, index) => (
-            <article
-              className="contact-card content-card stagger"
+        <div>
+          {contactDetails.map((item) => (
+            <a
+              className="contact-row"
+              href={item.href}
               key={item.title}
-              style={{ '--delay': `${index * 80}ms` }}
+              target={item.title === 'LinkedIn' ? '_blank' : undefined}
+              rel={item.title === 'LinkedIn' ? 'noreferrer' : undefined}
             >
-              <div className="contact-card__icon" aria-hidden="true">
-                {item.title === 'Email' ? '✉' : item.title === 'Phone' ? '⌁' : 'in'}
-              </div>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <a
-                  href={item.href}
-                  target={item.title === 'LinkedIn' ? '_blank' : undefined}
-                  rel={item.title === 'LinkedIn' ? 'noreferrer' : undefined}
-                >
-                  {item.value}
-                </a>
-              </div>
-            </article>
+              <span className="contact-row__label">{item.title}</span>
+              <span className="contact-row__value">{item.value}</span>
+              {item.title === 'LinkedIn' ? <span aria-hidden="true">↗</span> : null}
+            </a>
           ))}
         </div>
 
-        <div className="contact-cta content-card stagger" style={{ '--delay': '160ms' }}>
+        <div className="contact-note">
           <h3>Ready to Work Together?</h3>
           <p>
             Whether you&apos;re looking for a senior engineer to lead complex
             projects, scale your systems, or bring clarity to ambitious product
             work, I&apos;d love to hear about your needs.
           </p>
-          <div className="contact-cta__buttons">
-            <a
-              className="reveal-button reveal-button--primary"
-              href="mailto:yashwanthh235@gmail.com"
-            >
-              <span className="reveal-button__label">Start a Conversation</span>
-              <span className="reveal-button__value">yashwanthh235@gmail.com</span>
-            </a>
-            <a className="reveal-button reveal-button--secondary" href="tel:2013601325">
-              <span className="reveal-button__label">Schedule a Call</span>
-              <span className="reveal-button__value">201-360-1325</span>
-            </a>
-          </div>
+          <a className="text-link" href={contactDetails[0].href}>
+            Start a Conversation <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>
